@@ -1,0 +1,552 @@
+{
+  "style": "neo-depth",
+  "canvas": {
+    "width": 1440,
+    "height": 1080,
+    "grid": true
+  },
+  "canvas_region": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1080
+  },
+  "ui": {
+    "show_topbar": false,
+    "show_sidebar": false,
+    "show_footer": false,
+    "show_minimap": false,
+    "show_canvas_toolbar": false
+  },
+  "groups": [
+    {
+      "x": 278,
+      "y": 210,
+      "w": 220,
+      "h": 310,
+      "label": "Client",
+      "icon": "user",
+      "tone": "purple",
+      "depth": true
+    },
+    {
+      "x": 566,
+      "y": 210,
+      "w": 266,
+      "h": 530,
+      "label": "Platform",
+      "icon": "cube",
+      "tone": "accent",
+      "depth": true
+    },
+    {
+      "x": 922,
+      "y": 210,
+      "w": 220,
+      "h": 500,
+      "label": "Data",
+      "icon": "database",
+      "tone": "teal",
+      "depth": true
+    },
+    {
+      "x": 1200,
+      "y": 250,
+      "w": 194,
+      "h": 458,
+      "label": "External",
+      "icon": "globe",
+      "tone": "purple",
+      "depth": true
+    },
+    {
+      "x": 580,
+      "y": 782,
+      "w": 380,
+      "h": 170,
+      "label": "Async",
+      "icon": "queue",
+      "tone": "orange",
+      "depth": true
+    }
+  ],
+  "nodes": [
+    {
+      "id": "web",
+      "x": 298,
+      "y": 280,
+      "w": 180,
+      "h": 112,
+      "label": "Web App",
+      "subtext": "Next.js 14.2.3",
+      "icon": "web",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "mobile",
+      "x": 298,
+      "y": 432,
+      "w": 180,
+      "h": 112,
+      "label": "Mobile App",
+      "subtext": "React Native 0.73",
+      "icon": "phone",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "gateway",
+      "x": 590,
+      "y": 268,
+      "w": 204,
+      "h": 112,
+      "label": "API Gateway",
+      "subtext": "Kong 3.4.0",
+      "icon": "gateway",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      },
+      "depth": true
+    },
+    {
+      "id": "auth",
+      "x": 590,
+      "y": 420,
+      "w": 204,
+      "h": 112,
+      "label": "Auth Service",
+      "subtext": "Go 1.22.2",
+      "icon": "gateway",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "orders",
+      "x": 590,
+      "y": 572,
+      "w": 204,
+      "h": 112,
+      "label": "Orders Service",
+      "subtext": "Node.js 20.11",
+      "icon": "gateway",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "billing",
+      "x": 590,
+      "y": 724,
+      "w": 204,
+      "h": 112,
+      "label": "Billing Service",
+      "subtext": "Go 1.22.2",
+      "icon": "gateway",
+      "tone": "accent",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "postgres",
+      "x": 950,
+      "y": 292,
+      "w": 174,
+      "h": 112,
+      "label": "Postgres",
+      "subtext": "15.5",
+      "icon": "database",
+      "tone": "teal",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "redis",
+      "x": 950,
+      "y": 474,
+      "w": 174,
+      "h": 112,
+      "label": "Redis Cache",
+      "subtext": "7.2.4",
+      "icon": "cache",
+      "tone": "teal",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "object",
+      "x": 950,
+      "y": 656,
+      "w": 174,
+      "h": 128,
+      "label": "Object Storage",
+      "subtext": "MinIO RELEASE.2024-05-10",
+      "icon": "storage",
+      "tone": "teal",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "stripe",
+      "x": 1218,
+      "y": 374,
+      "w": 156,
+      "h": 112,
+      "label": "Stripe",
+      "subtext": "Payments API",
+      "icon": "globe",
+      "tone": "purple",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "email",
+      "x": 1218,
+      "y": 566,
+      "w": 156,
+      "h": 112,
+      "label": "Email Provider",
+      "subtext": "SendGrid v3",
+      "icon": "email",
+      "tone": "purple",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "queue",
+      "x": 610,
+      "y": 836,
+      "w": 162,
+      "h": 112,
+      "label": "Queue",
+      "subtext": "RabbitMQ 3.13",
+      "icon": "queue",
+      "tone": "orange",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    },
+    {
+      "id": "worker",
+      "x": 812,
+      "y": 836,
+      "w": 128,
+      "h": 112,
+      "label": "Worker",
+      "subtext": "Go 1.22.2",
+      "icon": "worker",
+      "tone": "orange",
+      "chip": {
+        "label": "Healthy",
+        "tone": "success"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        [
+          478,
+          336
+        ],
+        [
+          590,
+          336
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          692,
+          380
+        ],
+        [
+          692,
+          420
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          692,
+          532
+        ],
+        [
+          692,
+          572
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          692,
+          684
+        ],
+        [
+          692,
+          724
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          794,
+          336
+        ],
+        [
+          950,
+          336
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          794,
+          476
+        ],
+        [
+          860,
+          476
+        ],
+        [
+          860,
+          530
+        ],
+        [
+          950,
+          530
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          794,
+          628
+        ],
+        [
+          860,
+          628
+        ],
+        [
+          860,
+          720
+        ],
+        [
+          950,
+          720
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1124,
+          530
+        ],
+        [
+          1200,
+          530
+        ],
+        [
+          1200,
+          430
+        ],
+        [
+          1218,
+          430
+        ]
+      ],
+      "tone": "accent",
+      "label": "HTTPS",
+      "label_pos": [
+        1176,
+        514
+      ],
+      "glow": true
+    },
+    {
+      "points": [
+        [
+          1124,
+          720
+        ],
+        [
+          1200,
+          720
+        ],
+        [
+          1200,
+          622
+        ],
+        [
+          1218,
+          622
+        ]
+      ],
+      "tone": "accent",
+      "label": "HTTPS",
+      "label_pos": [
+        1176,
+        706
+      ],
+      "glow": true
+    },
+    {
+      "points": [
+        [
+          692,
+          836
+        ],
+        [
+          692,
+          780
+        ],
+        [
+          692,
+          780
+        ],
+        [
+          692,
+          836
+        ]
+      ],
+      "tone": "warning",
+      "dash": "6 6"
+    },
+    {
+      "points": [
+        [
+          772,
+          892
+        ],
+        [
+          812,
+          892
+        ]
+      ],
+      "tone": "warning",
+      "dash": "6 6",
+      "label": "Event",
+      "label_pos": [
+        792,
+        882
+      ],
+      "glow": true
+    },
+    {
+      "points": [
+        [
+          580,
+          628
+        ],
+        [
+          520,
+          628
+        ],
+        [
+          520,
+          892
+        ],
+        [
+          610,
+          892
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          794,
+          628
+        ],
+        [
+          860,
+          628
+        ],
+        [
+          860,
+          530
+        ],
+        [
+          794,
+          530
+        ]
+      ],
+      "tone": "default"
+    }
+  ],
+  "panels": [
+    {
+      "x": 1136,
+      "y": 816,
+      "w": 182,
+      "h": 150,
+      "title": "Legend",
+      "tone": "neutral",
+      "legend": [
+        {
+          "label": "Healthy",
+          "value": "Operational",
+          "tone": "success"
+        },
+        {
+          "label": "Async",
+          "value": "Asynchronous",
+          "tone": "orange"
+        },
+        {
+          "label": "External",
+          "value": "Third-party",
+          "tone": "purple"
+        }
+      ]
+    }
+  ],
+  "title_block": {
+    "x": 88,
+    "y": 86,
+    "title": "E-Commerce Platform",
+    "subtitle": "Core runtime architecture with async processing and external providers.",
+    "size": 56
+  }
+}

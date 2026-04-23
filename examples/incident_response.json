@@ -1,0 +1,331 @@
+{
+  "style": "editorial-technical",
+  "canvas": {
+    "width": 1440,
+    "height": 1080,
+    "grid": false
+  },
+  "canvas_region": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1080
+  },
+  "ui": {
+    "show_topbar": false,
+    "show_sidebar": false,
+    "show_footer": false,
+    "show_minimap": false,
+    "show_canvas_toolbar": false
+  },
+  "title_block": {
+    "x": 88,
+    "y": 86,
+    "title": "Incident Response Workflow",
+    "subtitle": "From triage to mitigation, updates, and postmortem.",
+    "size": 56
+  },
+  "lanes": [
+    {
+      "x": 132,
+      "y": 350,
+      "w": 1240,
+      "h": 132,
+      "label": "CUSTOMER",
+      "tone": "success",
+      "label_w": 110,
+      "r": 0
+    },
+    {
+      "x": 132,
+      "y": 482,
+      "w": 1240,
+      "h": 160,
+      "label": "SUPPORT",
+      "tone": "neutral",
+      "label_w": 110,
+      "r": 0
+    },
+    {
+      "x": 132,
+      "y": 642,
+      "w": 1240,
+      "h": 190,
+      "label": "ON-CALL ENGINEER",
+      "tone": "accent",
+      "label_w": 110,
+      "r": 0
+    },
+    {
+      "x": 132,
+      "y": 832,
+      "w": 1240,
+      "h": 150,
+      "label": "MANAGER",
+      "tone": "purple",
+      "label_w": 110,
+      "r": 0
+    }
+  ],
+  "nodes": [
+    {
+      "id": "issue",
+      "x": 278,
+      "y": 378,
+      "w": 150,
+      "h": 94,
+      "label": "Issue Reported",
+      "icon": "user",
+      "tone": "success",
+      "depth": false
+    },
+    {
+      "id": "triage",
+      "x": 278,
+      "y": 538,
+      "w": 150,
+      "h": 94,
+      "label": "Triage",
+      "icon": "summary",
+      "tone": "neutral",
+      "depth": false
+    },
+    {
+      "id": "sev",
+      "x": 506,
+      "y": 526,
+      "w": 118,
+      "h": 118,
+      "label": "SEV-1?",
+      "shape": "diamond",
+      "icon": "info",
+      "tone": "warning"
+    },
+    {
+      "id": "queue",
+      "x": 430,
+      "y": 736,
+      "w": 126,
+      "h": 94,
+      "label": "Standard Queue",
+      "icon": "queue",
+      "tone": "accent",
+      "depth": false
+    },
+    {
+      "id": "page",
+      "x": 676,
+      "y": 702,
+      "w": 142,
+      "h": 94,
+      "label": "Page On-call",
+      "icon": "email",
+      "tone": "accent",
+      "depth": false
+    },
+    {
+      "id": "mitigation",
+      "x": 862,
+      "y": 702,
+      "w": 142,
+      "h": 94,
+      "label": "Mitigation",
+      "icon": "worker",
+      "tone": "accent",
+      "depth": false
+    },
+    {
+      "id": "approval",
+      "x": 826,
+      "y": 864,
+      "w": 198,
+      "h": 96,
+      "label": "Manager Approval for Customer Update",
+      "icon": "document",
+      "tone": "purple",
+      "depth": false
+    },
+    {
+      "id": "status",
+      "x": 1098,
+      "y": 702,
+      "w": 150,
+      "h": 94,
+      "label": "Status Page Updated",
+      "icon": "summary",
+      "tone": "success",
+      "depth": false
+    },
+    {
+      "id": "postmortem",
+      "x": 1268,
+      "y": 702,
+      "w": 104,
+      "h": 94,
+      "label": "Postmortem",
+      "icon": "postmortem",
+      "tone": "success",
+      "depth": false
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        [
+          353,
+          472
+        ],
+        [
+          353,
+          538
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          428,
+          586
+        ],
+        [
+          506,
+          586
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          565,
+          644
+        ],
+        [
+          565,
+          704
+        ],
+        [
+          493,
+          704
+        ],
+        [
+          493,
+          736
+        ]
+      ],
+      "tone": "default",
+      "label": "No",
+      "label_pos": [
+        503,
+        682
+      ]
+    },
+    {
+      "points": [
+        [
+          624,
+          585
+        ],
+        [
+          676,
+          585
+        ],
+        [
+          676,
+          749
+        ]
+      ],
+      "tone": "default",
+      "label": "Yes",
+      "label_pos": [
+        643,
+        572
+      ]
+    },
+    {
+      "points": [
+        [
+          818,
+          749
+        ],
+        [
+          862,
+          749
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1004,
+          749
+        ],
+        [
+          1098,
+          749
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1248,
+          749
+        ],
+        [
+          1268,
+          749
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          933,
+          796
+        ],
+        [
+          933,
+          864
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1024,
+          912
+        ],
+        [
+          1048,
+          912
+        ],
+        [
+          1048,
+          749
+        ],
+        [
+          1098,
+          749
+        ]
+      ],
+      "tone": "default"
+    }
+  ],
+  "panels": [
+    {
+      "x": 1100,
+      "y": 216,
+      "w": 230,
+      "h": 126,
+      "title": "SLA Target",
+      "tone": "warning",
+      "body": "Acknowledge within 15m\nUpdate within 60m"
+    }
+  ]
+}

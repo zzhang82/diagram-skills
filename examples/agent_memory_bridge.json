@@ -1,0 +1,725 @@
+{
+  "style": "product-minimal",
+  "canvas": {
+    "width": 1600,
+    "height": 1100,
+    "grid": false
+  },
+  "canvas_region": {
+    "x": 0,
+    "y": 0,
+    "w": 1600,
+    "h": 1100
+  },
+  "ui": {
+    "show_topbar": false,
+    "show_sidebar": false,
+    "show_footer": false,
+    "show_minimap": false,
+    "show_canvas_toolbar": false
+  },
+  "title_block": {
+    "x": 88,
+    "y": 92,
+    "title": "Agent Memory Bridge",
+    "subtitle": "Two-channel MCP memory for coding agents: durable knowledge plus coordination signals.",
+    "size": 58,
+    "meta": [
+      {
+        "label": "Presentation mode",
+        "tone": "accent"
+      },
+      {
+        "label": "Product Minimal",
+        "tone": "purple"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "x": 88,
+      "y": 190,
+      "w": 220,
+      "h": 280,
+      "label": "Clients",
+      "icon": "user",
+      "tone": "purple"
+    },
+    {
+      "x": 352,
+      "y": 190,
+      "w": 330,
+      "h": 280,
+      "label": "MCP Surface",
+      "icon": "cube",
+      "tone": "accent"
+    },
+    {
+      "x": 726,
+      "y": 190,
+      "w": 360,
+      "h": 300,
+      "label": "Core Bridge",
+      "icon": "gateway",
+      "tone": "accent"
+    },
+    {
+      "x": 88,
+      "y": 540,
+      "w": 998,
+      "h": 190,
+      "label": "Promotion Pipeline",
+      "icon": "summary",
+      "tone": "orange"
+    },
+    {
+      "x": 88,
+      "y": 780,
+      "w": 320,
+      "h": 180,
+      "label": "Background Services",
+      "icon": "worker",
+      "tone": "orange"
+    },
+    {
+      "x": 450,
+      "y": 780,
+      "w": 296,
+      "h": 180,
+      "label": "Storage",
+      "icon": "database",
+      "tone": "success"
+    },
+    {
+      "x": 784,
+      "y": 780,
+      "w": 302,
+      "h": 180,
+      "label": "Quality & Health",
+      "icon": "info",
+      "tone": "neutral"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "codex",
+      "x": 112,
+      "y": 246,
+      "w": 172,
+      "h": 74,
+      "label": "Codex",
+      "icon": "web",
+      "tone": "purple"
+    },
+    {
+      "id": "coding-agent",
+      "x": 112,
+      "y": 334,
+      "w": 172,
+      "h": 74,
+      "label": "Coding Agent",
+      "icon": "service",
+      "tone": "purple"
+    },
+    {
+      "id": "reviewer",
+      "x": 112,
+      "y": 422,
+      "w": 172,
+      "h": 74,
+      "label": "Reviewer Agent",
+      "icon": "user",
+      "tone": "purple"
+    },
+    {
+      "id": "store",
+      "x": 376,
+      "y": 246,
+      "w": 130,
+      "h": 54,
+      "label": "store",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "recall",
+      "x": 376,
+      "y": 314,
+      "w": 130,
+      "h": 54,
+      "label": "recall",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "browse",
+      "x": 376,
+      "y": 382,
+      "w": 130,
+      "h": 54,
+      "label": "browse",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "forget",
+      "x": 522,
+      "y": 246,
+      "w": 136,
+      "h": 54,
+      "label": "forget",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "claim",
+      "x": 522,
+      "y": 314,
+      "w": 136,
+      "h": 54,
+      "label": "claim_signal",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "extend",
+      "x": 522,
+      "y": 382,
+      "w": 136,
+      "h": 54,
+      "label": "extend_lease",
+      "icon": "service",
+      "tone": "accent"
+    },
+    {
+      "id": "router",
+      "x": 840,
+      "y": 248,
+      "w": 132,
+      "h": 74,
+      "label": "Router",
+      "icon": "gateway",
+      "tone": "accent"
+    },
+    {
+      "id": "memory",
+      "x": 774,
+      "y": 352,
+      "w": 136,
+      "h": 152,
+      "label": "Memory Channel",
+      "subtext": "durable knowledge",
+      "icon": "database",
+      "tone": "purple",
+      "chip": {
+        "label": "Memory",
+        "tone": "purple"
+      }
+    },
+    {
+      "id": "signal",
+      "x": 938,
+      "y": 352,
+      "w": 124,
+      "h": 152,
+      "label": "Signal Channel",
+      "subtext": "coordination events",
+      "icon": "async",
+      "tone": "orange",
+      "chip": {
+        "label": "Signal",
+        "tone": "orange"
+      }
+    },
+    {
+      "id": "session",
+      "x": 126,
+      "y": 604,
+      "w": 116,
+      "h": 96,
+      "label": "Session",
+      "icon": "summary",
+      "tone": "orange"
+    },
+    {
+      "id": "summary",
+      "x": 266,
+      "y": 604,
+      "w": 116,
+      "h": 96,
+      "label": "Summary",
+      "icon": "document",
+      "tone": "orange"
+    },
+    {
+      "id": "learn",
+      "x": 406,
+      "y": 604,
+      "w": 116,
+      "h": 96,
+      "label": "Learn",
+      "icon": "note",
+      "tone": "orange"
+    },
+    {
+      "id": "gotcha",
+      "x": 546,
+      "y": 604,
+      "w": 116,
+      "h": 96,
+      "label": "Gotcha",
+      "icon": "info",
+      "tone": "orange"
+    },
+    {
+      "id": "domain",
+      "x": 686,
+      "y": 604,
+      "w": 146,
+      "h": 96,
+      "label": "Domain Note",
+      "icon": "document",
+      "tone": "orange"
+    },
+    {
+      "id": "watcher",
+      "x": 118,
+      "y": 844,
+      "w": 120,
+      "h": 80,
+      "label": "Watcher",
+      "icon": "worker",
+      "tone": "orange"
+    },
+    {
+      "id": "reflex",
+      "x": 252,
+      "y": 844,
+      "w": 120,
+      "h": 80,
+      "label": "Reflex",
+      "icon": "async",
+      "tone": "orange"
+    },
+    {
+      "id": "classifier",
+      "x": 118,
+      "y": 938,
+      "w": 254,
+      "h": 80,
+      "label": "Classifier (optional)",
+      "subtext": "off / shadow / assist",
+      "icon": "service",
+      "tone": "neutral"
+    },
+    {
+      "id": "sqlite",
+      "x": 474,
+      "y": 844,
+      "w": 122,
+      "h": 108,
+      "label": "SQLite + FTS5",
+      "icon": "database",
+      "tone": "success"
+    },
+    {
+      "id": "ns",
+      "x": 618,
+      "y": 844,
+      "w": 104,
+      "h": 108,
+      "label": "Namespaces",
+      "subtext": "global \u00b7 project:* \u00b7 domain:*",
+      "icon": "document",
+      "tone": "success"
+    },
+    {
+      "id": "health",
+      "x": 808,
+      "y": 844,
+      "w": 116,
+      "h": 80,
+      "label": "Health Checks",
+      "icon": "info",
+      "tone": "neutral"
+    },
+    {
+      "id": "proof",
+      "x": 938,
+      "y": 844,
+      "w": 116,
+      "h": 80,
+      "label": "Proof Harness",
+      "icon": "summary",
+      "tone": "neutral"
+    },
+    {
+      "id": "bench",
+      "x": 873,
+      "y": 938,
+      "w": 116,
+      "h": 80,
+      "label": "Retrieval Bench",
+      "icon": "summary",
+      "tone": "neutral"
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        [
+          284,
+          283
+        ],
+        [
+          376,
+          273
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          284,
+          371
+        ],
+        [
+          376,
+          341
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          284,
+          459
+        ],
+        [
+          376,
+          409
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          658,
+          273
+        ],
+        [
+          840,
+          285
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          906,
+          322
+        ],
+        [
+          842,
+          352
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          906,
+          322
+        ],
+        [
+          1000,
+          352
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          842,
+          504
+        ],
+        [
+          842,
+          560
+        ],
+        [
+          186,
+          560
+        ],
+        [
+          186,
+          604
+        ]
+      ],
+      "tone": "accent"
+    },
+    {
+      "points": [
+        [
+          1000,
+          504
+        ],
+        [
+          1000,
+          560
+        ],
+        [
+          546,
+          560
+        ],
+        [
+          546,
+          604
+        ]
+      ],
+      "tone": "warning",
+      "dash": "8 8"
+    },
+    {
+      "points": [
+        [
+          242,
+          652
+        ],
+        [
+          266,
+          652
+        ]
+      ],
+      "tone": "accent"
+    },
+    {
+      "points": [
+        [
+          382,
+          652
+        ],
+        [
+          406,
+          652
+        ]
+      ],
+      "tone": "accent"
+    },
+    {
+      "points": [
+        [
+          522,
+          652
+        ],
+        [
+          546,
+          652
+        ]
+      ],
+      "tone": "accent"
+    },
+    {
+      "points": [
+        [
+          662,
+          652
+        ],
+        [
+          686,
+          652
+        ]
+      ],
+      "tone": "accent"
+    },
+    {
+      "points": [
+        [
+          832,
+          700
+        ],
+        [
+          832,
+          748
+        ],
+        [
+          534,
+          748
+        ],
+        [
+          534,
+          844
+        ]
+      ],
+      "tone": "success"
+    },
+    {
+      "points": [
+        [
+          178,
+          730
+        ],
+        [
+          178,
+          844
+        ]
+      ],
+      "tone": "warning",
+      "dash": "8 8"
+    },
+    {
+      "points": [
+        [
+          178,
+          924
+        ],
+        [
+          178,
+          938
+        ]
+      ],
+      "tone": "default",
+      "dash": "6 6"
+    },
+    {
+      "points": [
+        [
+          238,
+          884
+        ],
+        [
+          252,
+          884
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          372,
+          884
+        ],
+        [
+          432,
+          884
+        ],
+        [
+          432,
+          898
+        ],
+        [
+          474,
+          898
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          596,
+          898
+        ],
+        [
+          618,
+          898
+        ]
+      ],
+      "tone": "success"
+    },
+    {
+      "points": [
+        [
+          722,
+          898
+        ],
+        [
+          808,
+          898
+        ]
+      ],
+      "tone": "default",
+      "dash": "8 8"
+    },
+    {
+      "points": [
+        [
+          924,
+          884
+        ],
+        [
+          938,
+          884
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          931,
+          924
+        ],
+        [
+          931,
+          938
+        ]
+      ],
+      "tone": "default",
+      "dash": "6 6"
+    }
+  ],
+  "panels": [
+    {
+      "x": 1104,
+      "y": 178,
+      "w": 418,
+      "h": 220,
+      "title": "Key ideas",
+      "icon": "info",
+      "tone": "accent",
+      "bullets": [
+        "Separates durable memory from short-lived coordination signals",
+        "Promotes sessions into reusable artifacts",
+        "Local-first runtime built on SQLite + FTS5",
+        "Small MCP surface; complexity stays behind the bridge"
+      ]
+    },
+    {
+      "x": 1104,
+      "y": 424,
+      "w": 418,
+      "h": 168,
+      "title": "Lifecycle",
+      "icon": "worker",
+      "tone": "orange",
+      "body": "Signals follow a clean lifecycle:\nclaim \u2192 extend \u2192 ack / expire / reclaim\n\nMemory follows a promotion ladder:\nsession \u2192 summary \u2192 learn \u2192 gotcha \u2192 domain-note"
+    },
+    {
+      "x": 1104,
+      "y": 616,
+      "w": 418,
+      "h": 156,
+      "title": "Why it matters",
+      "icon": "cube",
+      "tone": "purple",
+      "body": "Keeps recall inspectable and handoffs cleaner by\nseparating durable knowledge from workflow state.\n\nOptional classifier support stays additive, not required."
+    }
+  ],
+  "bottom_banner": {
+    "x": 58,
+    "y": 1010,
+    "w": 1464,
+    "h": 46,
+    "tone": "accent",
+    "icon": "cube",
+    "text": "Optimized for Codex-first workflows."
+  }
+}

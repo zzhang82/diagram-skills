@@ -1,0 +1,332 @@
+{
+  "style": "neo-depth",
+  "canvas": {
+    "width": 1440,
+    "height": 1080,
+    "grid": true
+  },
+  "canvas_region": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1080
+  },
+  "title_block": {
+    "x": 88,
+    "y": 86,
+    "title": "API Request Flow",
+    "subtitle": "Authenticated request path with event publication and async notification.",
+    "size": 56
+  },
+  "ui": {
+    "show_topbar": false,
+    "show_sidebar": false,
+    "show_footer": false,
+    "show_minimap": false,
+    "show_canvas_toolbar": false
+  },
+  "nodes": [
+    {
+      "id": "user",
+      "x": 160,
+      "y": 362,
+      "w": 126,
+      "h": 122,
+      "label": "User",
+      "subtext": "Actor",
+      "icon": "user",
+      "tone": "accent",
+      "chip": {
+        "label": "Actor",
+        "tone": "accent"
+      }
+    },
+    {
+      "id": "web",
+      "x": 380,
+      "y": 362,
+      "w": 140,
+      "h": 122,
+      "label": "Web App",
+      "subtext": "React",
+      "icon": "web",
+      "tone": "accent"
+    },
+    {
+      "id": "gateway",
+      "x": 610,
+      "y": 362,
+      "w": 140,
+      "h": 122,
+      "label": "API Gateway",
+      "subtext": "Kong",
+      "icon": "gateway",
+      "tone": "purple"
+    },
+    {
+      "id": "auth",
+      "x": 820,
+      "y": 350,
+      "w": 138,
+      "h": 106,
+      "label": "Authenticated?",
+      "shape": "diamond",
+      "icon": "lock",
+      "tone": "warning"
+    },
+    {
+      "id": "orders",
+      "x": 1020,
+      "y": 362,
+      "w": 144,
+      "h": 122,
+      "label": "Orders Service",
+      "subtext": "Node.js",
+      "icon": "cube",
+      "tone": "success"
+    },
+    {
+      "id": "postgres",
+      "x": 1226,
+      "y": 362,
+      "w": 122,
+      "h": 122,
+      "label": "Postgres",
+      "subtext": "Primary DB",
+      "icon": "database",
+      "tone": "purple"
+    },
+    {
+      "id": "login",
+      "x": 790,
+      "y": 554,
+      "w": 122,
+      "h": 122,
+      "label": "Login Page",
+      "subtext": "Web App",
+      "icon": "lock",
+      "tone": "danger"
+    },
+    {
+      "id": "event",
+      "x": 1014,
+      "y": 532,
+      "w": 154,
+      "h": 94,
+      "label": "Publish Event",
+      "subtext": "Domain Event",
+      "icon": "publish",
+      "tone": "orange"
+    },
+    {
+      "id": "queue",
+      "x": 1014,
+      "y": 670,
+      "w": 154,
+      "h": 94,
+      "label": "Queue",
+      "subtext": "Redis Streams",
+      "icon": "queue",
+      "tone": "warning"
+    },
+    {
+      "id": "worker",
+      "x": 1014,
+      "y": 810,
+      "w": 154,
+      "h": 94,
+      "label": "Worker",
+      "subtext": "Background Job",
+      "icon": "worker",
+      "tone": "teal"
+    },
+    {
+      "id": "email",
+      "x": 1014,
+      "y": 952,
+      "w": 154,
+      "h": 94,
+      "label": "Email Service",
+      "subtext": "SendGrid",
+      "icon": "email",
+      "tone": "accent"
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        [
+          286,
+          423
+        ],
+        [
+          380,
+          423
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          520,
+          423
+        ],
+        [
+          610,
+          423
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          750,
+          423
+        ],
+        [
+          820,
+          423
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          958,
+          423
+        ],
+        [
+          1020,
+          423
+        ]
+      ],
+      "tone": "success",
+      "label": "Yes",
+      "label_pos": [
+        970,
+        412
+      ],
+      "glow": true
+    },
+    {
+      "points": [
+        [
+          1164,
+          423
+        ],
+        [
+          1226,
+          423
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          889,
+          456
+        ],
+        [
+          889,
+          554
+        ]
+      ],
+      "tone": "danger",
+      "label": "No",
+      "label_pos": [
+        907,
+        500
+      ]
+    },
+    {
+      "points": [
+        [
+          1092,
+          484
+        ],
+        [
+          1092,
+          532
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1092,
+          626
+        ],
+        [
+          1092,
+          670
+        ]
+      ],
+      "tone": "warning",
+      "glow": true
+    },
+    {
+      "points": [
+        [
+          1092,
+          764
+        ],
+        [
+          1092,
+          810
+        ]
+      ],
+      "tone": "default"
+    },
+    {
+      "points": [
+        [
+          1092,
+          904
+        ],
+        [
+          1092,
+          952
+        ]
+      ],
+      "tone": "default"
+    }
+  ],
+  "panels": [
+    {
+      "x": 148,
+      "y": 704,
+      "w": 350,
+      "h": 240,
+      "title": "Flow Summary",
+      "tone": "accent",
+      "body": "Handles authenticated API requests for orders and\npublishes events for asynchronous notifications.",
+      "rows": [
+        {
+          "label": "Owner",
+          "value": "Olivia Rhye",
+          "icon": "user"
+        },
+        {
+          "label": "Last updated",
+          "value": "May 24, 2025",
+          "icon": "info"
+        },
+        {
+          "label": "Version",
+          "value": "v1.0",
+          "icon": "document"
+        },
+        {
+          "label": "Scope",
+          "value": "Order placement",
+          "icon": "summary"
+        }
+      ]
+    }
+  ]
+}
