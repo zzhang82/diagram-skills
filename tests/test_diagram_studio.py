@@ -5,6 +5,8 @@ from pathlib import Path
 
 import pytest
 
+from diagram_studio import __version__
+from diagram_studio.cli import build_parser
 from diagram_studio.exporters import export_mermaid
 from diagram_studio.renderer import render_diagram, render_to_files
 
@@ -22,6 +24,16 @@ def test_skill_metadata_is_discoverable() -> None:
     assert "name: diagram-studio" in frontmatter
     assert "description:" in frontmatter
     assert "$diagram-studio" in (ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
+    assert (ROOT / "references" / "DIAGRAM.md").exists()
+    assert (ROOT / "references" / "QUALITY_GATES.md").exists()
+
+
+def test_package_version_matches_release_surface() -> None:
+    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+
+    assert __version__ == "0.2.0"
+    assert 'version = "0.2.0"' in pyproject
+    assert build_parser().format_usage().startswith("usage:")
 
 
 def test_render_all_examples_to_svg_and_html(tmp_path: Path) -> None:

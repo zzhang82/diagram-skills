@@ -1,8 +1,10 @@
 # diagram-studio
 
-Diagram Studio is a Codex skill and Python renderer for planning, routing, and exporting polished software diagrams.
+Diagram Studio is a Codex skill and Python renderer for creating polished software and system diagrams.
 
-It does not assume one renderer is best for every diagram. The skill first decides the right abstraction and output mode, then routes to the backend that fits the job:
+Version `0.2.0` is the first cleaned-up release line after evaluating the experimental V2 branch. It keeps the stronger presentation direction while preserving the packaging, validation, and CI hardening already in the mainline repo.
+
+It supports the outputs people actually need:
 
 - **Presentation mode** for polished README, documentation, or deck visuals.
 - **Editable mode** for deterministic SVG/HTML artifacts that can be inspected and iterated.
@@ -13,10 +15,10 @@ It does not assume one renderer is best for every diagram. The skill first decid
 
 ## What is included
 
-- `SKILL.md` with the Codex skill contract and routing rules.
+- `SKILL.md` with the Codex skill contract and quality bar.
 - `diagram_studio/` with the structured SVG/HTML renderer and Mermaid exporter.
-- `examples/` with JSON `DiagramSpec` fixtures.
-- `references/` with routing, route-comparison, and presentation-quality notes.
+- `examples/` with JSON diagram fixtures.
+- `references/` with design rules, routing notes, route comparison, and quality gates.
 - `assets/` with curated visual reference assets.
 
 Generated render output is intentionally not committed. The default output directory is `generated/`, which is ignored by git.
@@ -73,12 +75,12 @@ When installing this repository into a Codex skills directory, use a folder name
 The skill should:
 
 1. Understand the diagram intent.
-2. Normalize the request into a `DiagramSpec`.
+2. Choose the clearest structure for the request.
 3. Choose presentation, editable, portable, or concept UI mode.
-4. Route to the best backend.
+4. Use the most suitable output path.
 5. Check density, hierarchy, text fit, and connector weight before export.
 
-For implementation context, read `references/ROUTING_FIRST.md` first, then load the more specific reference file only when needed.
+For implementation changes, read `references/DIAGRAM.md` for design rules, `references/ROUTING_FIRST.md` for output-path logic, and `references/QUALITY_GATES.md` before changing validation heuristics.
 
 ## Validate
 
@@ -127,4 +129,4 @@ diagram-skills/
 
 ## Design Direction
 
-Diagram Studio is routing-first. Treat the built-in renderer as the deterministic/editable path, not the only hero path. Presentation-quality diagrams may route through an image model first, while the structured renderer and Mermaid exporter keep the workflow inspectable and portable.
+Diagram Studio is presentation-first. Treat the built-in renderer as the deterministic and editable path, not the only hero path. The structured renderer and Mermaid exporter keep the workflow inspectable and portable, while the references capture the deeper backend-selection logic for maintainers.

@@ -1,30 +1,29 @@
 ---
 name: diagram-studio
-description: Generate and route polished software and system diagrams from a DiagramSpec with presentation, editable, and portable modes. Use when Codex needs to plan, render, export, or refine architecture diagrams, workflows, flow charts, process charts, or memory and coordination diagrams.
+description: Create polished software and system diagrams with presentation, editable, and portable outputs. Use when Codex needs to produce or refine architecture diagrams, workflows, flow charts, process charts, or memory and coordination diagrams.
 ---
 
 # Diagram Studio Skill
 
 ## Purpose
 
-Generate high-quality software diagrams by combining:
-- planning
+Generate high-quality software diagrams with:
 - simplification
-- style rules
-- backend routing
+- clear hierarchy
+- restrained styling
+- export flexibility
 
-This skill is **not** a single renderer pretending to be the best at every output.
+Keep internal implementation details secondary to user-facing output quality.
 
 ## Core contract
 
 When using this skill:
 1. understand the user's diagram intent
-2. normalize the request into a `DiagramSpec`
-3. choose the best output mode
-4. choose the best backend
-5. apply quality checks before export
+2. choose the best output mode
+3. produce the clearest useful diagram
+4. apply quality checks before export
 
-Read `references/ROUTING_FIRST.md` when the routing choice is ambiguous. Read `references/ROUTE_COMPARISON.md` when comparing image-model, structured renderer, and Mermaid outputs. Read `references/REFERENCE_GAP.md` when tuning presentation-mode polish.
+Read `references/DIAGRAM.md` when changing design rules. Read `references/ROUTING_FIRST.md` only when changing backend-selection logic. Read `references/ROUTE_COMPARISON.md` when comparing image-model, structured renderer, and Mermaid outputs. Read `references/QUALITY_GATES.md` when changing validation heuristics.
 
 ## Primary diagram types
 

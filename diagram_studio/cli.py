@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from . import __version__
 from .exporters import export_mermaid
 from .renderer import render_to_files
 from .styles import STYLES
@@ -10,6 +11,7 @@ from .styles import STYLES
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Render polished software diagrams from JSON specs.")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     render = sub.add_parser("render", help="Render one spec to SVG/HTML/PNG")
