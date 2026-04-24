@@ -21,8 +21,8 @@ def build_parser() -> argparse.ArgumentParser:
     render.add_argument("--png", action="store_true", help="Also export PNG with CairoSVG")
     render.add_argument("--no-html", action="store_true")
 
-    batch = sub.add_parser("render-examples", help="Render all bundled examples")
-    batch.add_argument("--examples-dir", type=Path, default=Path("examples"))
+    batch = sub.add_parser("render-examples", help="Render example specs from a source checkout or custom directory")
+    batch.add_argument("--examples-dir", type=Path, default=Path("examples"), help="Directory of example JSON specs (defaults to ./examples in a source checkout)")
     batch.add_argument("--outdir", type=Path, default=Path("generated"))
     batch.add_argument("--png", action="store_true")
 
@@ -41,7 +41,15 @@ def main() -> None:
         for key, path in result.items():
             print(f"{key}: {path}")
     elif args.command == "render-examples":
-        for spec in sorted(args.examples_dir.glob("*.json")):
+        if not args.examples_dir.exists():
+            parser.error(
+                f"examples directory not found: {args.examples_dir}. "
+                "Use a source checkout or pass --examples-dir to a directory of JSON specs."
+            )
+        specs = sorted(args.examples_dir.glob("*.json"))
+        if not specs:
+            parser.error(f"no example specs found in: {args.examples_dir}")
+        for spec in specs:
             result = render_to_files(spec, args.outdir, png=args.png, html=True)
             print(f"rendered {spec.name}")
             for key, path in result.items():

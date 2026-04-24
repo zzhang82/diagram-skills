@@ -110,18 +110,26 @@ Traits:
 - toy-like extrusions
 - fake editor chrome by default
 
-## DiagramSpec shape
+## Current renderer input shape
+
+The current renderer and Mermaid exporter consume concrete render fields like the following:
 
 ```json
 {
-  "diagramType": "architecture",
-  "mode": "presentation",
-  "preferredBackend": "auto",
-  "styleFamily": "editorial-technical",
-  "density": "medium",
-  "titleBlock": {
+  "style": "editorial-technical",
+  "canvas": {
+    "width": 1600,
+    "height": 1100,
+    "grid": false
+  },
+  "title_block": {
     "title": "Agent Memory Bridge",
     "subtitle": "Two-channel MCP memory for coding agents"
+  },
+  "ui": {
+    "show_topbar": false,
+    "show_sidebar": false,
+    "show_minimap": false
   },
   "groups": [],
   "nodes": [],
@@ -129,6 +137,8 @@ Traits:
   "panels": []
 }
 ```
+
+The runtime also accepts `styleFamily` and `titleBlock` as compatibility aliases when importing higher-level planning specs.
 
 ## Quality checks
 

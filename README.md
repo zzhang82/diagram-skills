@@ -2,7 +2,7 @@
 
 Diagram Studio is a Codex skill and Python renderer for creating polished software and system diagrams.
 
-Version `0.2.0` is the first cleaned-up release line after evaluating the experimental V2 branch. It keeps the stronger presentation direction while preserving the packaging, validation, and CI hardening already in the mainline repo.
+Version `0.2.1` tightens the published contract after the initial `0.2.0` release. It preserves the stronger presentation direction while keeping the package surface and maintainer docs explicit.
 
 It supports the outputs people actually need:
 
@@ -20,6 +20,8 @@ It supports the outputs people actually need:
 - `examples/` with JSON diagram fixtures.
 - `references/` with design rules, routing notes, route comparison, and quality gates.
 - `assets/` with curated visual reference assets.
+
+The installable Python package intentionally ships the runtime CLI only. Use a source checkout when you need `SKILL.md`, `examples/`, `references/`, and `assets/`.
 
 Generated render output is intentionally not committed. The default output directory is `generated/`, which is ignored by git.
 
@@ -42,19 +44,31 @@ If PNG export still fails, install Cairo for your operating system. SVG, HTML, a
 
 ## Use The Renderer
 
-Render one spec to SVG and HTML:
+Render one local spec to SVG and HTML:
+
+```bash
+python -m diagram_studio.cli render path/to/your-spec.json
+```
+
+From a source checkout, render the bundled example:
 
 ```bash
 python -m diagram_studio.cli render examples/agent_memory_bridge.json
 ```
 
-Render all bundled examples:
+From a source checkout, render all bundled examples:
 
 ```bash
 python -m diagram_studio.cli render-examples
 ```
 
-Export Mermaid fallback files:
+Export Mermaid fallback files from a local spec:
+
+```bash
+python -m diagram_studio.cli export-mermaid path/to/your-spec.json
+```
+
+From a source checkout, export Mermaid for the bundled example:
 
 ```bash
 python -m diagram_studio.cli export-mermaid examples/agent_memory_bridge.json
@@ -63,7 +77,7 @@ python -m diagram_studio.cli export-mermaid examples/agent_memory_bridge.json
 Render PNG when Cairo is available:
 
 ```bash
-python -m diagram_studio.cli render examples/agent_memory_bridge.json --png
+python -m diagram_studio.cli render path/to/your-spec.json --png
 ```
 
 ## Use As A Codex Skill
@@ -80,7 +94,7 @@ The skill should:
 4. Use the most suitable output path.
 5. Check density, hierarchy, text fit, and connector weight before export.
 
-For implementation changes, read `references/DIAGRAM.md` for design rules, `references/ROUTING_FIRST.md` for output-path logic, and `references/QUALITY_GATES.md` before changing validation heuristics.
+For implementation changes, read `references/DIAGRAM.md` for design rules, `references/ROUTING_FIRST.md` for output-path logic, and `references/QUALITY_GATES.md` before changing or adding validation heuristics.
 
 ## Validate
 

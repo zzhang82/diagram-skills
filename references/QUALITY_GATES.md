@@ -1,6 +1,8 @@
 # Quality Gates
 
-Run these checks before delivering a diagram.
+Use these as maintainer-facing review gates.
+
+The current runtime only enforces a small subset directly in code. Treat this file as the design and validation target while dedicated validators continue to expand.
 
 ## Core checks
 

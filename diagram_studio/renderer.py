@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
 from .icons import render_icon, svg_escape
+from .specs import normalize_spec
 from .styles import STYLES, TONE_KEYS
 
 
@@ -44,6 +45,7 @@ def _render_multiline_text(x: float, y: float, text: str, font_family: str, font
 
 
 def render_diagram(spec: Dict[str, Any], style_name: str | None = None) -> str:
+    spec = normalize_spec(spec)
     style_name = style_name or spec.get("style", "product-minimal")
     if style_name not in STYLES:
         raise ValueError(f"Unknown style: {style_name}")
@@ -240,7 +242,8 @@ def _render_footer(spec: Dict[str, Any], style: Dict[str, str]) -> str:
 
 
 def _render_title_block(block: Dict[str, Any], style: Dict[str, str], style_name: str) -> str:
-    x, y = block["x"], block["y"]
+    x = block.get("x", 88)
+    y = block.get("y", 86)
     title = svg_escape(block["title"])
     subtitle = svg_escape(block.get("subtitle", ""))
     meta = block.get("meta", [])
@@ -509,7 +512,7 @@ def _render_minimap(spec: Dict[str, Any], style: Dict[str, str], canvas_region: 
 
 
 def render_to_files(spec_path: Path, outdir: Path, style_name: str | None = None, png: bool = False, html: bool = True) -> Dict[str, Path]:
-    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    spec = normalize_spec(json.loads(spec_path.read_text(encoding="utf-8")))
     svg = render_diagram(spec, style_name)
     outdir.mkdir(parents=True, exist_ok=True)
     stem = spec_path.stem + (f"-{style_name}" if style_name else "")

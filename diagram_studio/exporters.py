@@ -7,6 +7,8 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+from .specs import normalize_spec
+
 Point = Tuple[float, float]
 
 
@@ -30,6 +32,7 @@ def _group_contains(group: Dict[str, Any], node: Dict[str, Any]) -> bool:
 
 
 def spec_to_mermaid(spec: Dict[str, Any]) -> str:
+    spec = normalize_spec(spec)
     nodes = spec.get("nodes", [])
     groups = spec.get("groups", [])
     edges = spec.get("edges", [])
@@ -121,13 +124,14 @@ def spec_to_mermaid(spec: Dict[str, Any]) -> str:
 
 
 def mermaid_markdown(spec: Dict[str, Any]) -> str:
+    spec = normalize_spec(spec)
     mermaid = spec_to_mermaid(spec)
     title = spec.get("title_block", {}).get("title") or spec.get("title") or "Diagram"
     return f"# {title}\n\n```mermaid\n{mermaid}\n```\n"
 
 
 def export_mermaid(spec_path: Path, outdir: Path) -> Dict[str, Path]:
-    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    spec = normalize_spec(json.loads(spec_path.read_text(encoding="utf-8")))
     outdir.mkdir(parents=True, exist_ok=True)
     stem = spec_path.stem
     mermaid = spec_to_mermaid(spec)
